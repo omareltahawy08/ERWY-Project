@@ -428,66 +428,62 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
     display: flex;
 }
 
-/* --- 15. TOTAL MOBILE RESET --- */
+/* --- 15. MOBILE OVERRIDE FIX --- */
 @media (max-width: 768px) {
     
-    /* 1. GLOBAL RESET: Force everything to be a single column */
-    .hero-flex, 
-    .product-grid, 
-    .lab-interface, 
-    .future-grid, 
-    .connect-grid,
-    .future-item {
+    /* 1. SEED TECH: Force strict vertical stacking */
+    .future-grid, .future-item {
         display: flex !important;
         flex-direction: column !important; /* Forces Text BELOW Image */
         align-items: center !important;
-        text-align: center !important;
         width: 100% !important;
     }
 
-    /* 2. HOME PAGE: Fix Image on top, Text below */
-    .hero-image, .hero-content {
-        width: 100% !important;
-        padding: 20px !important;
-    }
-    .hero-image img {
-        max-width: 280px !important;
-        margin-bottom: 20px;
-    }
-
-    /* 3. THE LAB: Center the Colors */
-    .color-options {
-        display: flex !important;
-        justify-content: center !important; /* This centers the circles */
-        align-items: center !important;
-        gap: 20px;
-        margin: 20px auto !important;
-        width: 100%;
-    }
-    
-    /* 4. SEED TECH: Cleanup the layout */
     .future-image, .future-text {
         width: 100% !important;
-        margin: 10px 0 !important;
+        flex: none !important;
+        padding: 10px !important;
+        text-align: center !important;
     }
+
     .future-image img {
         width: 90% !important;
-        border-radius: 15px;
+        max-width: 300px;
+        height: auto !important;
     }
 
-    /* 5. CONNECT PAGE: Align Form and Socials */
-    .contact-form-container, .contact-info-sidebar {
-        width: 100% !important;
-        margin-bottom: 30px;
-    }
-    .social-links {
+    /* 2. THE FOREST: Fix hidden buttons */
+    .product-grid {
         display: flex !important;
-        justify-content: center !important;
-        padding: 0;
-        gap: 25px;
+        flex-direction: column !important;
+        gap: 40px !important;
     }
 
-    /* 6. HEADER: Small logo for more room */
-    #main-logo { height: 40px !important; }
-    main { padding-top: 90px !important; }
+    .product-card {
+        width: 100% !important;
+        height: auto !important; /* Allows card to grow as much as needed */
+        min-height: 500px !important; /* Ensures the card is tall enough */
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; /* Keeps button at the bottom */
+    }
+
+    .product-card img {
+        width: 80% !important;
+        margin: 0 auto 15px auto;
+    }
+
+    /* 3. HOME & CONNECT: Standard Mobile Cleanup */
+    .hero-flex, .connect-grid {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 30px 15px !important;
+    }
+
+    #main-logo { height: 45px !important; }
+    main { padding-top: 100px !important; }
 }
