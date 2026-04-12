@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERWY | The Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <a href="index.html"><img src="images/erwyHorizontal.jpg" alt="ERWY Logo" id="main-logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">The Forest</a></li>
+                    <li><a href="custom.html" class="active">The Lab</a></li>
+                    <li><a href="future.html">Seed Tech</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <input type="radio" name="base" id="base-broccoli" class="lab-logic" checked>
+        <input type="radio" name="base" id="base-mushroom" class="lab-logic">
+        
+        <input type="radio" name="color" id="color-standard" class="lab-logic" checked>
+        <input type="radio" name="color" id="color-black" class="lab-logic">
+        <input type="radio" name="color" id="color-alt" class="lab-logic">
+
+        <div class="container">
+            <h1 style="text-align: center; font-family: 'Oswald'; margin-top: 20px;">The Lab</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Configure your MAI device. All previews are scaled to match.</p>
+
+            <div class="lab-interface">
+                <div class="lab-preview-window">
+                    <div class="broccoli-only">
+                        <img src="images/broccoliMAI.png" class="render broccoli-img img-standard" alt="Broccoli Standard">
+                        <img src="images/broccoliBlack.png" class="render broccoli-img img-black" alt="Broccoli Black">
+                        <img src="images/broccoliBlue.png" class="render broccoli-img img-alt" alt="Broccoli Blue">
+                    </div>
+
+                    <div class="mushroom-only">
+                        <img src="images/mushroomMAI.png" class="render mushroom-img img-standard" alt="Mushroom Standard">
+                        <img src="images/mushroomBlack.png" class="render mushroom-img img-black" alt="Mushroom Black">
+                        <img src="images/mushroomBlue.png" class="render mushroom-img img-alt" alt="Mushroom Blue">
+                    </div>
+                </div>
+
+                <div class="lab-controls">
+                    <h3 style="font-family: 'Oswald'; margin-bottom: 10px;">CUSTOMIZATION SUITE</h3>
+                    
+                    <p class="lab-label">Select Base Model:</p>
+                    <div style="margin-bottom: 25px;">
+                        <label for="base-broccoli" class="btn-lab-toggle">MAI Broccoli</label>
+                        <label for="base-mushroom" class="btn-lab-toggle">MAI Mushroom</label>
+                    </div>
+
+                    <p class="lab-label">Exterior Finish:</p>
+                    <div class="swatch-group">
+                        <label for="color-standard" class="swatch green" title="Standard Green"></label>
+                        <label for="color-black" class="swatch black" title="Matte Black"></label>
+                        <label for="color-alt" class="swatch blue" title="Midnight Blue"></label>
+                    </div>
+
+                    <p class="lab-label">Scale Preview:</p>
+                    <div style="margin-bottom: 30px;">
+                        <input type="radio" name="size" id="s1" checked> <label for="s1" style="margin-right:15px;">250ml</label>
+                        <input type="radio" name="size" id="s2"> <label for="s2">1L</label>
+                    </div>
+
+                    <a href="connect.html" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none; display: block;">
+    Finalize Order
+</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ERWY Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>

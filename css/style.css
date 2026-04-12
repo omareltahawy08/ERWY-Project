@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+/* --- 1. RESET & BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: #ddd9ce;
+    color: #3e436f;
+    font-family: 'Lora', serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* --- 2. HEADER & NAVIGATION (FIXED PANE) --- */
+header {
+    background-color: #3e436f;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+#main-logo { 
+    height: 100px; 
+    width: auto;
+    display: block;
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.nav-links a {
+    color: white; 
+    text-decoration: none; 
+    font-family: 'Oswald';
+    text-transform: uppercase; 
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.nav-links a.active { color: #a0d9ef; }
+
+/* --- 3. MAIN SPACING --- */
+main { 
+    flex: 1; 
+    padding-top: 160px; 
+}
+
+/* --- 4. HOME PAGE HERO (LOCKED - NO CHANGES) --- */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 0;
+}
+
+.hero-visual { flex: 1; text-align: center; }
+
+.hero-main-img { 
+    width: 100%; 
+    max-width: 400px; 
+    max-height: 450px; 
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.hero-text { flex: 1.2; }
+.hero-text h1 { font-family: 'Oswald'; font-size: 3rem; margin-bottom: 20px; }
+
+/* --- 5. VALUES AREA (LOCKED - NO CHANGES) --- */
+.values-area { padding: 60px 0; background: #d4d0c5; }
+.values-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+.value-card {
+    background: rgba(255,255,255,0.4);
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    border-radius: 8px;
+}
+
+/* --- 6. THE FOREST (FIXED ALIGNMENT & IMAGE SIZE) --- */
+.product-grid {
+    display: flex;
+    justify-content: center; 
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.product-card {
+    background: white;
+    flex: 0 1 350px; 
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+	padding-bottom: 25px;
+}
+
+.product-img {
+    width: 100%;        
+    max-height: 250px;  
+    object-fit: contain; 
+    padding: 20px;      
+    margin: 0 auto 15px auto;     
+    background: #fdfdfd; 
+}
+
+/* --- 7. THE LAB (LOCKED LOGIC) --- */
+.lab-logic { display: none; }
+.render { 
+    display: none; 
+    max-width: 100%; 
+    max-height: 400px; 
+    object-fit: contain; 
+}
+
+.lab-interface { 
+	display: flex; 
+	gap: 40px; 
+	margin-top: 30px; 
+	margin-bottom: 80px; 
+}
+.lab-preview-window { 
+    flex: 1.5; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 15px; 
+    min-height: 450px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+	box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#base-broccoli:checked ~ .container .lab-interface .broccoli-only,
+#base-mushroom:checked ~ .container .lab-interface .mushroom-only { display: block; }
+#color-standard:checked ~ .container .lab-interface .img-standard,
+#color-black:checked ~ .container .lab-interface .img-black,
+#color-alt:checked ~ .container .lab-interface .img-alt { display: block; }
+
+/* --- 8. BUTTONS & FOOTER --- */
+.btn-primary {
+    display: inline-block;
+    background: #3e436f;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-family: 'Oswald';
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
+
+/* --- 9. THE LAB: ADDITIONAL CUSTOMIZATION STYLES --- */
+.lab-controls {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.lab-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+}
+
+.swatch-group { display: flex; gap: 15px; margin-bottom: 25px; }
+.swatch {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #eee;
+    transition: 0.2s;
+}
+
+.swatch.green { background: #869b5b; }
+.swatch.black { background: #1a1a1a; }
+.swatch.blue { background: #3e436f; }
+
+/* Active State Visuals for Lab Buttons */
+#base-broccoli:checked ~ .container label[for="base-broccoli"],
+#base-mushroom:checked ~ .container label[for="base-mushroom"] {
+    background-color: #3e436f;
+    color: white;
+}
+
+#color-standard:checked ~ .container label[for="color-standard"],
+#color-black:checked ~ .container label[for="color-black"],
+#color-alt:checked ~ .container label[for="color-alt"] {
+    border-color: #3e436f;
+    transform: scale(1.1);
+}
+
+.btn-lab-toggle {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1.5px solid #3e436f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Oswald';
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+/* --- 10. THE LAB: COMBO LOGIC (SINGLE IMAGE SHOWCASE) --- */
+/* The modifications are ONLY in this section to fix the "one image at a time" issue */
+
+/* Hide everything when a selection is made to prevent bleed-through */
+#base-broccoli:checked ~ .container .broccoli-only,
+#base-broccoli:checked ~ .container .mushroom-only,
+#base-mushroom:checked ~ .container .broccoli-only,
+#base-mushroom:checked ~ .container .mushroom-only {
+    display: none;
+}
+
+/* Specific Show Commands: Must target both base AND color to isolate the file */
+
+/* 1. Broccoli - Color Combinations */
+#base-broccoli:checked ~ .container #color-standard:checked ~ .lab-interface .broccoli-only,
+#base-broccoli:checked ~ .container #color-standard:checked ~ .lab-interface .img-standard { display: block; }
+
+#base-broccoli:checked ~ .container #color-black:checked ~ .lab-interface .broccoli-only,
+#base-broccoli:checked ~ .container #color-black:checked ~ .lab-interface .img-black { display: block; }
+
+#base-broccoli:checked ~ .container #color-alt:checked ~ .lab-interface .broccoli-only,
+#base-broccoli:checked ~ .container #color-alt:checked ~ .lab-interface .img-alt { display: block; }
+
+
+/* 2. Mushroom - Color Combinations */
+#base-mushroom:checked ~ .container #color-standard:checked ~ .lab-interface .mushroom-only,
+#base-mushroom:checked ~ .container #color-standard:checked ~ .lab-interface .img-standard { display: block; }
+
+#base-mushroom:checked ~ .container #color-black:checked ~ .lab-interface .mushroom-only,
+#base-mushroom:checked ~ .container #color-black:checked ~ .lab-interface .img-black { display: block; }
+
+#base-mushroom:checked ~ .container #color-alt:checked ~ .lab-interface .mushroom-only,
+#base-mushroom:checked ~ .container #color-alt:checked ~ .lab-interface .img-alt { display: block; }/* --- 11. SEED TECH (FUTURE.HTML) --- */
+.tech-feature-box {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 0;
+    margin-top: 20px;
+}
+
+.tech-visual {
+    flex: 1;
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-main-img {
+    width: 100%;
+    max-width: 500px; /* Limits the "too big" image size */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.status-badge {
+    background: #869b5b;
+    color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+.sub-feature {
+    background: rgba(255,255,255,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border-left: 4px solid #3e436f;
+}
+
+.sub-feature h4 {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.tech-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}/* --- 12. CONNECT PAGE (CONNECT.HTML) --- */
+.connect-grid {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+.contact-form-container {
+    flex: 1.5;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-info-sidebar {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Oswald';
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Lora', serif;
+    background: #f9f9f9;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.info-block {
+    margin-bottom: 30px;
+}
+
+.info-block h4 {
+    font-family: 'Oswald';
+    color: #3e436f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #869b5b;
+    display: inline-block;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #3e436f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    color: #869b5b;
+}
+
+/* --- 13. POP-UP LOGIC --- */
+
+/* Hide the overlay by default */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* THE TRICK: Show the overlay when the hidden checkbox is checked */
+#form-trigger:checked ~ .overlay {
+    display: flex;
+}

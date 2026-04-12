@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERWY | Connect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <input type="checkbox" id="form-trigger" style="display: none;">
+
+    <header>
+        <div class="container header-flex">
+            <a href="index.html"><img src="images/erwyHorizontal.jpg" alt="ERWY Logo" id="main-logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">The Forest</a></li>
+                    <li><a href="custom.html">The Lab</a></li>
+                    <li><a href="future.html">Seed Tech</a></li>
+                    <li><a href="connect.html" class="active">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h1 style="font-family: 'Oswald'; font-size: 2.5rem;">Connect With Us</h1>
+                <p>Have questions about MAI or Seed Tech? We're here to help irrigate your ideas.</p>
+            </div>
+
+            <div class="connect-grid">
+                <div class="contact-form-container">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="email@erwy.bh" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="What is this regarding?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Write your message here..."></textarea>
+                        </div>
+                        
+                        <label for="form-trigger" class="btn-primary" style="display: block; text-align: center; cursor: pointer;">
+                            Finalize Order
+                        </label>
+                    </form>
+                </div>
+
+                <div class="contact-info-sidebar">
+                    <div class="info-block">
+                        <h4>Headquarters</h4>
+                        <p>ERWY Project Division</p>
+                        <p>Diplomatic Area, Manama</p>
+                        <p>Kingdom of Bahrain</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Contact Details</h4>
+                        <p><strong>Email:</strong> erwy.bh@gmail.com</p>
+                        <p><strong>Support:</strong> +973 3220 8425</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Follow the Growth</h4>
+                        <ul class="social-links">
+                            <li><a href="https://www.instagram.com/erwy.bh" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@erwy.bh" target="_blank">TikTok</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="overlay">
+        <div class="popup-box">
+            <h2 style="font-family: 'Oswald'; color: #3e436f; margin-bottom: 15px;">Success!</h2>
+            <p>Thanks for the purchase. Your MAI device is being prepared.</p>
+            <label for="form-trigger" class="btn-primary" style="margin-top: 25px; display: inline-block; cursor: pointer;">Close</label>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ERWY Project</p>
+        </div>
+    </footer>
+
+</body>
+</html>
