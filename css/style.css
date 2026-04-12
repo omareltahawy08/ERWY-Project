@@ -428,87 +428,85 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
     display: flex;
 }
 
-/* --- 15. UPDATED MOBILE RESPONSIVE FIXES --- */
+/* --- 15. FINAL MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
     
-    /* 1. Reset Container Widths - This fixes the "small" look */
-    .container {
-        width: 95% !important;
-        padding: 0 10px;
-    }
+    /* 1. Reset Container & Global Padding */
+    .container { width: 92% !important; margin: 0 auto; }
+    main { padding-top: 110px !important; }
 
-    /* 2. Header & Navigation */
-    #main-logo { height: 45px !important; }
-    main { padding-top: 100px !important; }
-    .nav-links { gap: 5px; justify-content: space-around; width: 100%; }
-    .nav-links a { font-size: 9px; letter-spacing: 0; }
-
-    /* 3. Home Page Fix (Hero Section) */
-    .hero-flex {
-        flex-direction: column !important;
-        text-align: center;
-    }
-    .hero-image img {
-        width: 100% !important; /* Makes the logo/image fill the screen */
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-    .hero-content h1 { font-size: 2rem !important; }
-
-    /* 4. The Forest Fix (Product Cards) */
-    .product-grid {
-        flex-direction: column !important;
-        gap: 20px;
-    }
-    .product-card {
-        width: 100% !important; /* Cards will now fill the width */
-        margin: 0 auto;
-    }
-
-    /* 5. The Lab Fix (Center Alignment) */
-    .lab-interface {
-        flex-direction: column-reverse !important; /* Image on top, controls bottom */
-    }
-    /* Centers the color circles and labels */
-    .lab-controls {
-        text-align: center;
+    /* 2. Home Page: Button & Text Padding */
+    .hero-content {
+        padding: 20px !important; /* Adds space inside the beige box */
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .color-options {
-        justify-content: center !important; /* Centers the circles */
-        display: flex;
-        gap: 15px;
-        margin: 15px 0;
+    .hero-content p {
+        margin-bottom: 25px !important; /* Pushes button away from text */
+    }
+    .hero-image img {
+        width: 100% !important;
+        margin-bottom: 10px;
     }
 
-    /* 6. Seed Tech Fix (Image & Text Stacking) */
-    .future-grid {
+    /* 3. The Forest: Fix Missing Buttons */
+    .product-grid {
+        display: flex !important;
         flex-direction: column !important;
-        text-align: center;
         gap: 30px;
     }
-    .future-item {
-        flex-direction: column !important; /* Stacks image above text */
-        align-items: center;
-    }
-    .future-image, .future-text {
+    .product-card {
         width: 100% !important;
+        min-height: 450px; /* Gives room for the button to reappear */
+        padding-bottom: 25px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    /* 7. Connect Page Fix (Socials Alignment) */
-    .connect-grid {
+    /* 4. The Lab: Move Image Back to TOP */
+    .lab-interface {
+        display: flex !important;
+        flex-direction: column !important; /* Image will now be on top again */
+    }
+    .color-options {
+        justify-content: center !important;
+        gap: 20px;
+        margin: 20px 0 !important;
+    }
+    .lab-controls {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 5. Seed Tech: Making it "Neat" */
+    .future-grid {
+        display: flex !important;
         flex-direction: column !important;
+        gap: 40px;
     }
-    .contact-info-sidebar {
-        text-align: center; /* Centers Headquarters and Contact headers */
+    .future-item {
+        display: flex !important;
+        flex-direction: column !important; /* Strictly stacks image then text */
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
+    .future-image {
+        width: 90% !important;
+        margin-bottom: 15px;
+    }
+    .future-text {
+        width: 100% !important;
+        padding: 0 10px;
+    }
+
+    /* 6. Connect Page: Socials Center */
     .social-links {
         display: flex;
-        justify-content: center !important; /* Centers Instagram/TikTok */
-        padding: 0;
-        list-style: none;
-        gap: 20px;
+        justify-content: center !important;
+        gap: 30px;
+        margin-top: 20px;
     }
 }
