@@ -428,62 +428,87 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
     display: flex;
 }
 
-/* --- 15. MOBILE RESPONSIVE FIXES --- */
+/* --- 15. UPDATED MOBILE RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
     
-    /* 1. Shrink the logo and header so they don't block the view */
-    #main-logo {
-        height: 50px !important; /* Half the size on mobile */
+    /* 1. Reset Container Widths - This fixes the "small" look */
+    .container {
+        width: 95% !important;
+        padding: 0 10px;
     }
 
-    header {
-        padding: 5px 0;
-    }
+    /* 2. Header & Navigation */
+    #main-logo { height: 45px !important; }
+    main { padding-top: 100px !important; }
+    .nav-links { gap: 5px; justify-content: space-around; width: 100%; }
+    .nav-links a { font-size: 9px; letter-spacing: 0; }
 
-    /* 2. Adjust spacing at the top so titles aren't hidden */
-    main {
-        padding-top: 110px !important;
-    }
-
-    /* 3. Force columns to stack instead of being side-by-side */
-    .header-flex, 
-    .hero-flex, 
-    .product-grid, 
-    .lab-interface, 
-    .connect-grid, 
-    .future-grid {
+    /* 3. Home Page Fix (Hero Section) */
+    .hero-flex {
         flex-direction: column !important;
-        align-items: center;
         text-align: center;
     }
+    .hero-image img {
+        width: 100% !important; /* Makes the logo/image fill the screen */
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    .hero-content h1 { font-size: 2rem !important; }
 
-    /* 4. Make elements take up the full width of the phone screen */
-    .product-card, 
-    .lab-controls, 
-    .lab-preview-window, 
-    .contact-form-container, 
-    .contact-info-sidebar,
-    .hero-content,
-    .hero-image {
+    /* 4. The Forest Fix (Product Cards) */
+    .product-grid {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    .product-card {
+        width: 100% !important; /* Cards will now fill the width */
+        margin: 0 auto;
+    }
+
+    /* 5. The Lab Fix (Center Alignment) */
+    .lab-interface {
+        flex-direction: column-reverse !important; /* Image on top, controls bottom */
+    }
+    /* Centers the color circles and labels */
+    .lab-controls {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .color-options {
+        justify-content: center !important; /* Centers the circles */
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    /* 6. Seed Tech Fix (Image & Text Stacking) */
+    .future-grid {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+    .future-item {
+        flex-direction: column !important; /* Stacks image above text */
+        align-items: center;
+    }
+    .future-image, .future-text {
         width: 100% !important;
-        max-width: 100% !important;
-        margin: 10px 0 !important;
     }
 
-    /* 5. Fix the navigation links so they fit on one line */
-    .nav-links {
-        gap: 8px;
-        justify-content: center;
+    /* 7. Connect Page Fix (Socials Alignment) */
+    .connect-grid {
+        flex-direction: column !important;
+    }
+    .contact-info-sidebar {
+        text-align: center; /* Centers Headquarters and Contact headers */
+    }
+    .social-links {
+        display: flex;
+        justify-content: center !important; /* Centers Instagram/TikTok */
         padding: 0;
-    }
-
-    .nav-links a {
-        font-size: 10px; /* Smaller text for the menu */
-    }
-
-    /* 6. Fix images that are popping out of their boxes */
-    .hero-image img, .product-card img, .lab-preview-window img {
-        width: 80% !important;
-        height: auto !important;
+        list-style: none;
+        gap: 20px;
     }
 }
