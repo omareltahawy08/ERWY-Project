@@ -427,3 +427,63 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
 #form-trigger:checked ~ .overlay {
     display: flex;
 }
+
+/* --- 15. MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    
+    /* 1. Shrink the logo and header so they don't block the view */
+    #main-logo {
+        height: 50px !important; /* Half the size on mobile */
+    }
+
+    header {
+        padding: 5px 0;
+    }
+
+    /* 2. Adjust spacing at the top so titles aren't hidden */
+    main {
+        padding-top: 110px !important;
+    }
+
+    /* 3. Force columns to stack instead of being side-by-side */
+    .header-flex, 
+    .hero-flex, 
+    .product-grid, 
+    .lab-interface, 
+    .connect-grid, 
+    .future-grid {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 4. Make elements take up the full width of the phone screen */
+    .product-card, 
+    .lab-controls, 
+    .lab-preview-window, 
+    .contact-form-container, 
+    .contact-info-sidebar,
+    .hero-content,
+    .hero-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    /* 5. Fix the navigation links so they fit on one line */
+    .nav-links {
+        gap: 8px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 10px; /* Smaller text for the menu */
+    }
+
+    /* 6. Fix images that are popping out of their boxes */
+    .hero-image img, .product-card img, .lab-preview-window img {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
