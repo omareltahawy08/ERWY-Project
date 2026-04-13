@@ -431,31 +431,37 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
 /* --- 15. FINAL MOBILE OPTIMIZATION (PERCENTAGE BASED) --- */
 @media (max-width: 768px) {
     
-    /* 1. SEED TECH: IMAGE ON TOP, TEXT BELOW */
+    /* 1. SEED TECH: ONLY FOR MOBILE - FORCED VERTICAL STACK */
     .future-grid {
-        display: block !important; /* Removes flex behavior */
+        display: block !important; 
         width: 100% !important;
     }
 
     .future-item {
         display: block !important;
         width: 100% !important;
-        margin-bottom: 60px !important; /* Space between different tech items */
-        text-align: center !important;
+        margin-bottom: 50px !important; 
+        clear: both !important; 
     }
 
-    .future-image, .future-text {
-        width: 100% !important;
+    .future-image {
         display: block !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto 15px auto !important;
     }
 
     .future-image img {
-        width: 90% !important; /* Image takes up most of the width */
+        width: 90% !important; 
         max-width: 320px;
         height: auto !important;
-        margin-bottom: 20px !important;
+    }
+
+    .future-text {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 10px !important;
     }
 
     /* 2. HOME PAGE: VERTICAL STACK */
