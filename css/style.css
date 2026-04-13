@@ -428,53 +428,55 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
     display: flex;
 }
 
-/* --- 15. FINAL COMPREHENSIVE MOBILE ALIGNMENT --- */
+/* --- 15. FINAL MOBILE OPTIMIZATION (PERCENTAGE BASED) --- */
 @media (max-width: 768px) {
     
-    /* 1. SEED TECH: FORCE VERTICAL ORDER (IMAGE OVER TEXT) */
+    /* 1. SEED TECH: IMAGE ON TOP, TEXT BELOW */
     .future-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 50px !important;
+        display: block !important; /* Removes flex behavior */
+        width: 100% !important;
     }
 
     .future-item {
-        display: grid !important; /* Grid is stronger than flex for forcing rows */
-        grid-template-columns: 100% !important; 
-        text-align: center !important;
+        display: block !important;
         width: 100% !important;
-        margin: 0 !important;
+        margin-bottom: 60px !important; /* Space between different tech items */
+        text-align: center !important;
     }
 
     .future-image, .future-text {
         width: 100% !important;
         display: block !important;
-        float: none !important; /* Removes any old floating */
+        padding: 0 !important;
+        margin: 0 auto !important;
     }
 
     .future-image img {
-        width: 100% !important;
-        max-width: 300px !important;
+        width: 90% !important; /* Image takes up most of the width */
+        max-width: 320px;
         height: auto !important;
-        margin: 0 auto 20px auto !important;
+        margin-bottom: 20px !important;
     }
 
-    /* 2. HOME PAGE: CENTERED BOX & BALANCED BUTTON */
-    .hero-content {
-        padding: 50px 20px !important; /* Balanced padding inside beige box */
+    /* 2. HOME PAGE: VERTICAL STACK */
+    .hero-flex {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
+    }
+
+    .hero-image {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        padding: 40px 20px !important;
         text-align: center !important;
     }
 
-    .hero-content p {
-        margin: 30px 0 !important; /* Pushes button to the vertical center */
-        line-height: 1.6;
-    }
-
-    /* 3. THE LAB: CENTER ALIGN COLOR OPTIONS */
+    /* 3. THE LAB: CENTER CUSTOMIZATIONS */
     .lab-interface {
         display: flex !important;
         flex-direction: column !important;
@@ -482,51 +484,37 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
 
     .color-options {
         display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important; /* Centers circles */
-        align-items: center !important;
+        justify-content: center !important; /* Centers the circles */
         width: 100% !important;
-        margin: 25px auto !important;
-        padding: 0 !important;
+        margin: 20px 0 !important;
+        gap: 15px;
     }
 
-    /* 4. THE FOREST: NEAT CARDS (NO EXCESS SPACE) */
+    /* 4. THE FOREST: FOOTER SPACING */
+    .product-grid {
+        margin-bottom: 80px !important; /* Forces black footer away from boxes */
+    }
+
     .product-card {
-        width: 95% !important;
-        height: auto !important; /* Card grows with content */
-        padding: 30px 15px !important;
-        margin: 0 auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .product-card img {
-        width: 70% !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 5. CONNECT: FULL SCREEN WIDTH */
-    .container {
         width: 100% !important;
-        padding: 0 20px !important;
+        margin-bottom: 30px !important;
     }
 
-    .connect-grid {
-        display: flex !important;
-        flex-direction: column !important;
+    /* 5. CONNECT: CENTER DETAILS & SOCIALS */
+    .contact-info-sidebar {
         width: 100% !important;
+        text-align: center !important;
     }
 
     .social-links {
         display: flex !important;
-        justify-content: center !important;
+        justify-content: center !important; /* Centers Instagram/TikTok */
         padding: 0 !important;
-        margin: 30px 0 !important;
-        gap: 40px !important;
+        margin: 20px auto !important;
+        gap: 30px;
     }
 
     /* 6. HEADER SCALE */
-    #main-logo { height: 42px !important; }
+    #main-logo { height: 45px !important; }
     main { padding-top: 100px !important; }
 }
