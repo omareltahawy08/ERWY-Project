@@ -428,83 +428,91 @@ footer { background: #111; color: #888; padding: 30px 0; text-align: center; }
     display: flex;
 }
 
-/* --- 15. MASTER MOBILE ALIGNMENT FIX --- */
+/* --- 15. IRONCLAD MOBILE RESPONSIVE FIX --- */
 @media (max-width: 768px) {
     
-    /* 1. Global Centering Force */
-    .hero-flex, 
-    .product-grid, 
-    .lab-interface, 
-    .future-grid, 
-    .future-item, 
-    .connect-grid,
-    .contact-info-sidebar {
+    /* 1. SEED TECH: FORCE VERTICAL STACK (HIGHEST PRIORITY) */
+    /* We target the grid AND the items inside it to ensure zero rows exist */
+    .future-grid, .future-item {
         display: flex !important;
-        flex-direction: column !important; /* Forces vertical stack */
-        align-items: center !important;    /* Centers horizontally */
-        text-align: center !important;      /* Centers text */
+        flex-direction: column !important; 
+        align-items: center !important;
         width: 100% !important;
-        gap: 20px !important;
-    }
-
-    /* 2. Seed Tech & Home: Image on TOP, Text BELOW */
-    .future-image, .future-text, .hero-image, .hero-content {
-        width: 100% !important;
-        flex: none !important;
+        margin: 0 0 40px 0 !important;
         padding: 0 !important;
     }
 
-    /* 3. Shop (The Forest): Remove gaps & show buttons */
-    .product-card {
+    .future-image, .future-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        text-align: center !important;
+    }
+
+    .future-image img {
         width: 90% !important;
+        max-width: 320px !important;
         height: auto !important;
-        min-height: 400px !important; /* Reduced to stop excess white space */
-        padding: 20px !important;
-        margin: 0 auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 2. HOME PAGE: CENTER BUTTON & PADDING */
+    .hero-content {
+        padding: 40px 20px !important; /* Extra padding for the box */
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important; /* Pulls content closer together */
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 300px !important; /* Gives the box more height */
     }
 
-    .product-card img {
-        width: 60% !important; /* Smaller image to reduce white space */
-        margin-bottom: 10px !important;
+    .hero-content p {
+        margin: 20px 0 40px 0 !important; /* Centers button between text and border */
     }
 
-    .product-card h3, .product-card p {
-        margin: 5px 0 !important; /* Tightens text spacing */
+    /* 3. CONNECT PAGE: FULL WIDTH & CENTERED SOCIALS */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
     }
 
-    /* 4. The Lab: Center the color circles */
-    .color-options {
+    .connect-grid {
         display: flex !important;
-        flex-direction: row !important; /* Keep circles in a line */
-        justify-content: center !important; /* BUT center the line */
-        gap: 15px;
-        width: 100%;
-        margin: 15px 0 !important;
+        flex-direction: column !important;
+        width: 100% !important;
     }
 
-    /* 5. Connect: Center the socials */
+    .contact-form-container, .contact-info-sidebar {
+        width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+
     .social-links {
         display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        list-style: none;
+        justify-content: center !important; /* Centers Instagram/TikTok */
+        gap: 30px !important;
         padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* 4. THE LAB: CENTER ALIGNED COLORS */
+    .color-options {
+        display: flex !important;
+        justify-content: center !important; /* Centers the circles */
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
         margin: 20px 0 !important;
-        gap: 30px;
     }
 
-    .social-links li {
-        display: inline-block;
+    /* 5. THE FOREST: CARD HEIGHT */
+    .product-card {
+        width: 100% !important;
+        min-height: 480px !important;
     }
 
-    /* 6. Header Cleanup */
-    #main-logo { height: 40px !important; }
-    main { padding-top: 90px !important; }
-    .nav-links {
-        justify-content: center !important;
-        gap: 10px;
-    }
+    /* 6. NAVIGATION & HEADER */
+    #main-logo { height: 45px !important; }
+    main { padding-top: 100px !important; }
 }
